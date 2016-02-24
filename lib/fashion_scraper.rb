@@ -1,6 +1,7 @@
 require 'open-uri'
+
 require 'pry'
-#reque and reddis or sidkick
+
 class FashionScraper
 
   def scrape_www
@@ -13,7 +14,9 @@ class FashionScraper
       Article.create(
         url: link,
         image: image.value,
-        title: title
+        title: title,
+        source: "Who What Wear",
+        category: "wfashion"
       )
     end
   end
@@ -28,7 +31,9 @@ class FashionScraper
       Article.create(
         url: link,
         image: image.value,
-        title: title
+        title: title,
+        source: "Refinery 29",
+        category: "wfashion"
       )
     end
   end
@@ -43,7 +48,9 @@ class FashionScraper
       Article.create(
         url: link.value,
         image: image.value,
-        title: title
+        title: title,
+        source: "Elle Canada",
+        category: "wfashion"
       )
     end
   end
@@ -54,11 +61,12 @@ class FashionScraper
       image = article.css('a.category-article-thumb img').attr('src')
       title = article.css('div.category-article-main header h2 a.post-title').text
       link = article.css('div.category-article-main header h2 a.post-title').attr('href')
-
       Article.create(
         url: link.value,
         image: image.value,
-        title: title
+        title: title,
+        source: "Fashion Spot",
+        category: "wfashion"
       )
     end
   end
@@ -73,7 +81,9 @@ class FashionScraper
       Article.create(
         url: link,
         image: image,
-        title: title
+        title: title,
+        source: "Glamour",
+        category: "wfashion"
       )
     end
   end
@@ -89,9 +99,9 @@ class FashionScraper
       Article.create(
         url: link.value,
         image: image.value,
-        title: title.value
-        #category: "mfashion"
-        #source: "fashionbeans"
+        title: title.value,
+        category: "mfashion",
+        source: "Fashion Beans"
       )
     end
   end
@@ -107,8 +117,9 @@ class FashionScraper
         url: link,
         image: image.value,
         title: title,
-        #category: "mfashion",
-        #source: "sharp_for_men"
+        category: "mfashion",
+        source: "Sharp for Men"
+
       )
     end
   end
