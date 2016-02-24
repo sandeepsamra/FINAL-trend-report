@@ -90,8 +90,8 @@ class FashionScraper
         url: link.value,
         image: image.value,
         title: title.value
-        # ,category: "mfashion"
-        # ,source: "fashionbeans"
+        #category: "mfashion"
+        #source: "fashionbeans"
       )
     end
   end
