@@ -85,11 +85,11 @@ class FashionScraper
       image = article.css('a.left.relative img').attr('src')
       title = article.css('h2 a').attr('title')
       link = article.css('h2 a').attr('href')
-      binding.pry
+
       Article.create(
-        url: link,
+        url: link.value,
         image: image.value,
-        title: title
+        title: title.value
         # ,category: "mfashion"
         # ,source: "fashionbeans"
       )
@@ -102,13 +102,13 @@ class FashionScraper
       image = article.css('picture img').attr('src')
       title = article.css('div.post-copy h2').text
       link = article.css('a')[0].attr('href')
-      binding.pry
+      
       Article.create(
         url: link,
         image: image.value,
         title: title,
-        category: "mfashion",
-        source: "sharp_for_men"
+        #category: "mfashion",
+        #source: "sharp_for_men"
       )
     end
   end
